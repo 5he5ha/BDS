@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Human Heart Defects Database</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      h1 {
+        color: red;
+        text-align: center;
+      }
+      form {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+      }
+      label {
+        color: red;
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type=text], select {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      input[type=submit] {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Human Heart Defects Database</h1>
+    <form action="/search" method="get">
+      <label for="search_term">Search term:</label>
+      <input type="text" id="search_term" name="search_term"><br><br>
+      <label for="search_category">Search category:</label>
+      <select id="search_category" name="search_category">
+        <option value="gene">Gene</option>
+        <option value="disease">Disease</option>
+        <option value="chd">CHD</option>
+      </select><br><br>
+      <input type="submit" value="Search">
+    </form>
+  </body>
+</html>

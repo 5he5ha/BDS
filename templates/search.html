@@ -1,0 +1,46 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: red;
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Results for {{ category }}</h1>
+    {% if error %}
+      <p>No results found.</p>
+    {% else %}
+      <ul>
+        {% for result in results %}
+          <li>
+            {% if category == 'gene' %}
+              <h2>{{ result.gene_name }}</h2>
+              <p>Gene ID: {{ result.gene_id }}</p>
+              <p>Gene Loci: {{ result.gene_loci }}</p>
+              <p>Gene Function: {{ result.gene_function }}</p>
+            {% elif category == 'disease' %}
+              <h2>{{ result.disease_name }}</h2>
+              <p>Disease ID: {{ result.disease_id }}</p>
+              <p>Clinical Findings: {{ result.clinical_findings }}</p>
+              {% elif category == 'chd' %}
+              <h2>{{ result.CHD_name }}</h2>
+              <p>CHD ID: {{ result.CHD_id }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>
+
+
